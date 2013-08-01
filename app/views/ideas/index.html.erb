@@ -4,6 +4,7 @@
 <% @ideas.each do |idea| %>
   <li>
     <%= idea.name %>: <%= idea.description %>
+    <%= link_to "Destroy", idea_path(idea.id), :method => "delete", :data => { :confirm => "Are you sure?" }  %>
   </li>
 <% end %>
 </ul>

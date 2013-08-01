@@ -22,6 +22,32 @@ class IdeasController < ApplicationController
     end
   end
 
+  def show
+    @idea = Idea.find_by_id(params[:id])
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @idea }
+    end
+  end
+
+  def edit
+    @idea = Idea.find_by_id(params[:id])
+
+    respond_to do |format|
+      format.html
+    end
+  end
+
+  def destroy
+    idea = Idea.find_by_id(params[:id])
+    idea.destroy
+
+    respond_to do |format|
+      format.html { redirect_to ideas_url }
+    end
+  end
+
   private
 
   def idea_params
