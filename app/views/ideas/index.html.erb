@@ -1,0 +1,9 @@
+<h1>Idea Notebook</h1>
+
+<ul>
+<% @ideas.each do |idea| %>
+  <li>
+    <%= idea.name %>: <%= idea.description %>
+  </li>
+<% end %>
+</ul>
