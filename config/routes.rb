@@ -10,6 +10,7 @@ IdeaNotebook::Application.routes.draw do
 
   # Update
   get "/ideas/:id/edit", { :controller => 'ideas', :action => 'edit', :as => 'edit_idea'}
+  patch "/ideas/:id", { :controller => 'ideas', :action => 'update' }
 
   # Destroy
   delete "/ideas/:id", { :controller => 'ideas', :action => 'destroy' }

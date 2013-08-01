@@ -1,9 +1,13 @@
 <h1>Idea Notebook</h1>
 
+<%= link_to "Add a new idea", new_idea_path  %>
+
 <ul>
 <% @ideas.each do |idea| %>
   <li>
     <%= idea.name %>: <%= idea.description %>
+    <%= link_to "Show", idea_path(idea.id)  %>
+    <%= link_to "Edit", edit_idea_path(idea.id)  %>
     <%= link_to "Destroy", idea_path(idea.id), :method => "delete", :data => { :confirm => "Are you sure?" }  %>
   </li>
 <% end %>

@@ -39,6 +39,15 @@ class IdeasController < ApplicationController
     end
   end
 
+  def update
+    @idea = Idea.find_by_id(params[:id])
+    @idea.update(idea_params)
+
+    respond_to do |format|
+      format.html { redirect_to idea_url(@idea.id) }
+    end
+  end
+
   def destroy
     idea = Idea.find_by_id(params[:id])
     idea.destroy
